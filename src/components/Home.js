@@ -1,8 +1,7 @@
-import { signInWithPopup } from 'firebase/auth'
 import React from 'react'
-import { auth,provider } from '../firebase'
 import { useAuthState } from 'react-firebase-hooks/auth'
-
+import { SignInButton } from './login/SignInButton'
+import { auth } from '../firebase'
 
 function Home() {
   const [user] = useAuthState(auth)
@@ -31,18 +30,6 @@ function Home() {
 
 export default Home
 
-function SignInButton() {
-  const signInWithGoogle = () => {
-    // firebaseを使ってgoogleでログイン
-    signInWithPopup( auth, provider )
-  }
-
-  return (
-    <button onClick={signInWithGoogle}>
-      <p>Sign In</p>
-    </button>
-  )
-}
 
 function SignOutButton() {
   return (
@@ -53,7 +40,6 @@ function SignOutButton() {
 }
 
 function UserInfo() {
-
   return (
     <div className="userInfo">
       <img src={auth.currentUser.photoURL} alt="" style={{borderRadius: '50px'}} />
