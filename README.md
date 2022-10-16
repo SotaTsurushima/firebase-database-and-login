@@ -1,7 +1,7 @@
 # firebase database
 using firebase value 
 # firebase login
-using firebase login function with google authentication 
+using firebase login authentication 
 
 # Getting Started with Create React App
 
