@@ -2,6 +2,7 @@ import React from 'react'
 import { useAuthState } from 'react-firebase-hooks/auth'
 import { SignInButton } from './login/SignInButton'
 import { SignOutButton } from './login/SignOutButton'
+import { UserInfo } from './login/UserInfo'
 import { auth } from '../firebase'
 
 function Home() {
@@ -15,12 +16,8 @@ function Home() {
       */}
       {user ? (
       <>
-        <div>
-          <UserInfo />
-        </div>
-        <div>
-          <SignOutButton />
-        </div>
+        <UserInfo />
+        <SignOutButton />
       </>
       ) : 
         <SignInButton />
@@ -30,12 +27,3 @@ function Home() {
 }
 
 export default Home
-
-function UserInfo() {
-  return (
-    <div className="userInfo">
-      <img src={auth.currentUser.photoURL} alt="" style={{borderRadius: '50px'}} />
-      <h2>{auth.currentUser.displayName}</h2>
-    </div>
-  )
-}
