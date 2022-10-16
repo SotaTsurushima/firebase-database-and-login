@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 import './App.css';
-import db from "./firebase"
+import { db } from "./firebase"
 import { collection, getDocs } from "firebase/firestore"
-import Home from "./Home"
+import Home from "./components/Home"
 
 function App() {
   const [posts, setPosts] = useState([])
