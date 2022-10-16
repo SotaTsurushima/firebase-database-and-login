@@ -1,6 +1,7 @@
 import React from 'react'
 import { useAuthState } from 'react-firebase-hooks/auth'
 import { SignInButton } from './login/SignInButton'
+import { SignOutButton } from './login/SignOutButton'
 import { auth } from '../firebase'
 
 function Home() {
@@ -29,15 +30,6 @@ function Home() {
 }
 
 export default Home
-
-
-function SignOutButton() {
-  return (
-    <button onClick={() => auth.signOut()}>
-      <p>Sign Out</p>
-    </button>
-  )
-}
 
 function UserInfo() {
   return (
